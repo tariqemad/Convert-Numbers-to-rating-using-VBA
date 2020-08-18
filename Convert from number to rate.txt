@@ -1,0 +1,38 @@
+Sub Convert_Click()
+
+Dim n As Integer
+
+n = Application.WorksheetFunction.CountA(Range("a:a"))  ' To stop on empty raw
+
+For k = 3 To 10  ' Number of culomns
+  For i = 2 To n  ' Number of raws
+  
+   If Worksheets("Sheet1").Cells(i, k).Value >= 90 Then
+   Worksheets("Sheet2").Cells(i, k).Value = Sheets(Sheet3.Name).Range("A1").Value
+  
+   ElseIf Worksheets("Sheet1").Cells(i, k).Value >= 80 Then
+   Worksheets("Sheet2").Cells(i, k).Value = Sheets(Sheet3.Name).Range("A2").Value
+   
+   ElseIf Worksheets("Sheet1").Cells(i, k).Value >= 70 Then
+   Worksheets("Sheet2").Cells(i, k).Value = Sheets(Sheet3.Name).Range("A3").Value
+   
+   ElseIf Worksheets("Sheet1").Cells(i, k).Value >= 60 Then
+   Worksheets("Sheet2").Cells(i, k).Value = Sheets(Sheet3.Name).Range("A4").Value
+   
+   ElseIf Worksheets("Sheet1").Cells(i, k).Value >= 50 Then
+   Worksheets("Sheet2").Cells(i, k).Value = Sheets(Sheet3.Name).Range("A5").Value
+   
+   ElseIf Worksheets("Sheet1").Cells(i, k).Value <= 49 Then
+   Worksheets("Sheet2").Cells(i, k).Value = Sheets(Sheet3.Name).Range("A6").Value
+   Worksheets("Sheet2").Cells(i, k).Interior.ColorIndex = 3  ' set background read 
+  
+   End If
+ 
+  Next i
+
+Next k
+
+MsgBox "Done"
+
+End Sub
+
